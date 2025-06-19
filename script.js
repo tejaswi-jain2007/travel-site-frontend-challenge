@@ -247,3 +247,4 @@ if (themeToggle) {
         localStorage.setItem('theme', currentTheme);
     });
 }
+
