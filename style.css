@@ -566,11 +566,11 @@ body.dark-mode {
 }
 
 body.dark-mode .navbar {
-    background: rgba(20, 20, 20, 0.95);
+    background: rgba(0, 0, 0, 0.95);
 }
 
 body.dark-mode .nav-menu a {
-    color: #f0f0f0;
+    color: #ffffff;
 }
 
 body.dark-mode .nav-menu a:hover {
