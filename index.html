@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust - Discover Amazing Destinations</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div class="loading-container" id="loadingContainer">
+        <div class="loading-rectangle" id="loadingRect">
+            <div class="loading-fill" id="loadingFill"></div>
+        </div>
+        <div class="loading-text">WANDERLUST</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Wanderlust</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#tours">Tours</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <div class="theme-toggle" id="themeToggle">
+                    <div class="toggle-track">
+                        <div class="toggle-thumb">
+                            <i class="fas fa-sun sun-icon"></i>
+                            <i class="fas fa-moon moon-icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Crazy Scroll Animation Trigger -->
+    <div class="crazy-animation-trigger" id="crazyTrigger"></div>
+
+    <!-- Hero Section with Parallax -->
+    <section id="home" class="hero parallax-container">
+        <div class="parallax-bg"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="hover-word" 
+                      data-images='["https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400", "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400", "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400"]'>Discover</span>
+                <span class="hover-word" 
+                      data-images='["https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400", "https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=400", "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=400"]'>Amazing</span>
+                <span class="hover-word" 
+                      data-images='["https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400", "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400", "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400"]'>Destinations</span>
+            </h1>
+            <p class="hero-subtitle">
+                <span class="hover-word" 
+                      data-images='["https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=400", "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=400", "https://images.unsplash.com/photo-1551632811-561732d1e306?w=400"]'>Explore</span>
+                the world's most beautiful places with us
+            </p>
+            <button class="cta-button ripple-btn">Start Your Journey</button>
+        </div>
+        
+        <!-- Floating Image Container -->
+        <div class="floating-image" id="floatingImage">
+            <img src="" alt="Destination" id="floatingImg">
+            <div class="image-counter" id="imageCounter">1/3</div>
+        </div>
+    </section>
+
+    <!-- Crazy Animation Elements -->
+    <div class="crazy-elements">
+        <div class="crazy-circle"></div>
+        <div class="crazy-square"></div>
+        <div class="crazy-triangle"></div>
+        <div class="crazy-star"></div>
+        <div class="crazy-diamond"></div>
+    </div>
+
+    <!-- Destinations Carousel -->
+    <section id="destinations" class="destinations-section">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">Popular Destinations</h2>
+            <div class="carousel-container scroll-reveal">
+                <div class="carousel-wrapper">
+                    <div class="carousel-slide active">
+                        <div class="destination-card">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Bali">
+                            <div class="card-content">
+                                <h3>Bali, Indonesia</h3>
+                                <p>Paradise island with stunning beaches and rich culture</p>
+                                <span class="price">From $899</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="destination-card">
+                            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800" alt="Santorini">
+                            <div class="card-content">
+                                <h3>Santorini, Greece</h3>
+                                <p>Breathtaking sunsets and white-washed buildings</p>
+                                <span class="price">From $1299</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="destination-card">
+                            <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800" alt="Maldives">
+                            <div class="card-content">
+                                <h3>Maldives</h3>
+                                <p>Crystal clear waters and overwater bungalows</p>
+                                <span class="price">From $1899</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="destination-card">
+                            <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800" alt="Tokyo">
+                            <div class="card-content">
+                                <h3>Tokyo, Japan</h3>
+                                <p>Modern metropolis with ancient traditions</p>
+                                <span class="price">From $1599</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn prev-btn">&lt;</button>
+                <button class="carousel-btn next-btn">&gt;</button>
+                <div class="carousel-indicators">
+                    <span class="indicator active" data-slide="0"></span>
+                    <span class="indicator" data-slide="1"></span>
+                    <span class="indicator" data-slide="2"></span>
+                    <span class="indicator" data-slide="3"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tours Section -->
+    <section id="tours" class="tours-section parallax-container">
+        <div class="parallax-bg-2"></div>
+        <div class="container">
+            <h2 class="section-title scroll-reveal">Featured Tours</h2>
+            <div class="tours-grid">
+                <div class="tour-card scroll-popup">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600" alt="Adventure Tour">
+                    <div class="tour-info">
+                        <h3>Adventure Package</h3>
+                        <p>7 days of thrilling adventures</p>
+                        <span class="tour-price">$1,299</span>
+                    </div>
+                </div>
+                <div class="tour-card scroll-popup">
+                    <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600" alt="Luxury Tour">
+                    <div class="tour-info">
+                        <h3>Luxury Escape</h3>
+                        <p>5-star accommodations and experiences</p>
+                        <span class="tour-price">$2,599</span>
+                    </div>
+                </div>
+                <div class="tour-card scroll-popup">
+                    <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600" alt="Cultural Tour">
+                    <div class="tour-info">
+                        <h3>Cultural Journey</h3>
+                        <p>Immerse in local traditions</p>
+                        <span class="tour-price">$999</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content scroll-popup">
+                <h2>About Wanderlust</h2>
+                <p>We are passionate about creating unforgettable travel experiences. Our team of experts curates the best destinations and activities to make your journey extraordinary.</p>
+                <button class="ripple-btn">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">Get In Touch</h2>
+            <div class="contact-form scroll-popup">
+                <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit" class="ripple-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
