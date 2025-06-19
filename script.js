@@ -227,4 +227,3 @@ const observer = new IntersectionObserver((entries) => {
 // Observe all scroll popup elements
 document.querySelectorAll('.scroll-popup').forEach(el => {
     observer.observe(el);
-});
