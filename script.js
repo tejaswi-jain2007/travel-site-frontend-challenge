@@ -1,3 +1,27 @@
+// Loader logic
+window.addEventListener("load", () => {
+    let percent = 0;
+    const percentageText = document.getElementById("percentage");
+    const interval = setInterval(() => {
+        percent += Math.floor(Math.random() * 5) + 1;
+        if (percent >= 100) {
+            percent = 100;
+            clearInterval(interval);
+        }
+        if (percentageText) {
+            percentageText.textContent = percent + "%";
+        }
+    }, 100);
+
+    setTimeout(() => {
+        const loaderWrapper = document.getElementById("loader-wrapper");
+        if (loaderWrapper) {
+            loaderWrapper.classList.add("hidden");
+        }
+    }, 4000); // Hide loader after 4 seconds
+});
+
+
 document.addEventListener('DOMContentLoaded', function() {
     // Parallax Effect
     function parallaxEffect() {
