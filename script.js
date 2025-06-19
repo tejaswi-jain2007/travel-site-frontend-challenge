@@ -227,3 +227,23 @@ const observer = new IntersectionObserver((entries) => {
 // Observe all scroll popup elements
 document.querySelectorAll('.scroll-popup').forEach(el => {
     observer.observe(el);
+});
+
+// Dark/Light Mode Toggle
+const themeToggle = document.getElementById('themeToggle');
+const body = document.body;
+
+// Load saved theme
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+    body.classList.add('dark-mode');
+}
+
+// Toggle on click
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        const currentTheme = body.classList.contains('dark-mode') ? 'dark' : 'light';
+        localStorage.setItem('theme', currentTheme);
+    });
+}
