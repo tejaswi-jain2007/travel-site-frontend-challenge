@@ -50,45 +50,48 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Floating Image on Hover
     function setupFloatingImages() {
-    const hoverWords = document.querySelectorAll('.hover-word');
-    const floatingImage = document.getElementById('floatingImage');
-    const floatingImg = document.getElementById('floatingImg');
-    const imageCounter = document.getElementById('imageCounter');
+  const isMobile = window.innerWidth <= 768;
+  if (isMobile) return; // Disable floating image on mobile
 
-    hoverWords.forEach(word => {
-        const images = JSON.parse(word.getAttribute('data-images'));
-        let currentIndex = 0;
-        let interval;
+  const hoverWords = document.querySelectorAll('.hover-word');
+  const floatingImage = document.getElementById('floatingImage');
+  const floatingImg = document.getElementById('floatingImg');
+  const imageCounter = document.getElementById('imageCounter');
 
-        word.addEventListener('mouseenter', function (e) {
-            if (!images || images.length === 0) return;
+  hoverWords.forEach(word => {
+    const images = JSON.parse(word.getAttribute('data-images'));
+    let currentIndex = 0;
+    let interval;
 
-            floatingImage.classList.add('show');
-            floatingImg.src = images[currentIndex];
-            imageCounter.textContent = `${currentIndex + 1}/${images.length}`;
-            updateFloatingImagePosition(e);
+    word.addEventListener('mouseenter', function (e) {
+      if (!images || images.length === 0) return;
 
-            interval = setInterval(() => {
-                currentIndex = (currentIndex + 1) % images.length;
-                floatingImg.src = images[currentIndex];
-                imageCounter.textContent = `${currentIndex + 1}/${images.length}`;
-            }, 1000);
-        });
+      floatingImage.classList.add('show');
+      floatingImg.src = images[currentIndex];
+      imageCounter.textContent = `${currentIndex + 1}/${images.length}`;
+      updateFloatingImagePosition(e);
 
-        word.addEventListener('mousemove', updateFloatingImagePosition);
-
-        word.addEventListener('mouseleave', function () {
-            floatingImage.classList.remove('show');
-            clearInterval(interval);
-        });
+      interval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        floatingImg.src = images[currentIndex];
+        imageCounter.textContent = `${currentIndex + 1}/${images.length}`;
+      }, 1000);
     });
 
-    function updateFloatingImagePosition(e) {
-        const x = e.clientX + 20;
-        const y = e.clientY - 100;
-        floatingImage.style.left = x + 'px';
-        floatingImage.style.top = y + 'px';
-    }
+    word.addEventListener('mousemove', updateFloatingImagePosition);
+
+    word.addEventListener('mouseleave', function () {
+      floatingImage.classList.remove('show');
+      clearInterval(interval);
+    });
+  });
+
+  function updateFloatingImagePosition(e) {
+    const x = e.clientX + 20;
+    const y = e.clientY - 100;
+    floatingImage.style.left = x + 'px';
+    floatingImage.style.top = y + 'px';
+  }
 }
 
 
