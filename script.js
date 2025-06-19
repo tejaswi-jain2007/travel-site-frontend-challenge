@@ -248,3 +248,16 @@ if (themeToggle) {
     });
 }
 
+// Ripple effect on Start Your Journey button
+$(document).ready(function () {
+    try {
+        $('.ripple-button-container').ripples({
+            resolution: 256,
+            dropRadius: 15,
+            perturbance: 0.04,
+            interactive: true
+        });
+    } catch (e) {
+        console.warn("Ripples not supported:", e);
+    }
+});

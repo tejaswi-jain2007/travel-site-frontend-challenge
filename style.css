@@ -565,6 +565,13 @@ body.dark-mode {
     color: #f0f0f0;
 }
 
+.ripple-button-container {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50px;
+}
+
 body.dark-mode .navbar {
     background: rgba(20, 20, 20, 0.95);
 }
